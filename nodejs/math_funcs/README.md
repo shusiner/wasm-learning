@@ -1,6 +1,6 @@
-# The Quadratic equation webapp example
+# Math Functions webapp example
 
-In this example, we demonstrate how to use JSON to call Rust functions in SSVM from JavaScript. Read about [Getting started with Rust functions in Node.js](https://www.secondstate.io/articles/getting-started-with-rust-function/).
+In this example, we demonstrate how to use JSON to call Rust functions to call various math functions in SSVM from JavaScript. Read about [Getting started with Rust functions in Node.js](https://www.secondstate.io/articles/getting-started-with-rust-function/).
 
 ## Prerequisites
 
@@ -19,6 +19,14 @@ $ ssvmup build
 $ cd node
 $ node test.js
 [0.5,-3.0]
+102334155
+60
+14
+0
+1
+-2
+242
+24
 ```
 
 ## Web app
@@ -29,5 +37,5 @@ $ node server.js
 Listening at http://localhost:8080
 ```
 
-Then point your browser to `http://hostname:8080` enter numeric values for `a`, `b`, `c`, and hit the "Solve" button to find the roots.
+Then point your browser to `http://hostname:8080` try out various functions and hit the "Solve" button to find the answers.
 
