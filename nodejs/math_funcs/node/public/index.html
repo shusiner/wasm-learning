@@ -11,40 +11,87 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <script>
-$(function() {
-    var options = {
-      target: '#roots',
-      url: "/solve",
-      type: "post"
-    };
-    $('#solve').ajaxForm(options);
-});
-$(function() {
-    var options = {
-      target: '#fib_dp_ans',
-      url: "/fib_dp",
-      type: "post"
-    };
-    $('#fib_dp').ajaxForm(options);
-});
-$(function() {
-    var options = {
-      target: '#ap_ans',
-      url: "/ap",
-      type: "post"
-    };
-    $('#ap').ajaxForm(options);
-});
-    </script>
+<script>
+  $(function() {
+      var options = {
+        target: '#roots',
+        url: "/solve",
+        type: "post"
+      };
+      $('#solve').ajaxForm(options);
+  });
+  $(function() {
+      var options = {
+        target: '#fib_dp_ans',
+        url: "/fib_dp",
+        type: "post"
+      };
+      $('#fib_dp').ajaxForm(options);
+  });
+  $(function() {
+      var options = {
+        target: '#ap_ans',
+        url: "/ap",
+        type: "post"
+      };
+      $('#ap_sum').ajaxForm(options);
+  });
+  $(function() {
+      var options = {
+        target: '#ap_ans_1',
+        url: "/ap1",
+        type: "post"
+      };
+      $('#ap1').ajaxForm(options);
+  });
+  $(function() {
+      var options = {
+        target: '#ap_ans_2',
+        url: "/ap2",
+        type: "post"
+      };
+      $('#ap2').ajaxForm(options);
+  });
+  $(function() {
+      var options = {
+        target: '#ap_ans_3',
+        url: "/ap3",
+        type: "post"
+      };
+      $('#ap3').ajaxForm(options);
+  });
+  $(function() {
+      var options = {
+        target: '#ap_ans_4',
+        url: "/ap4",
+        type: "post"
+      };
+      $('#ap4').ajaxForm(options);
+  });
+  $(function() {
+      var options = {
+        target: '#gp_ans',
+        url: "/gp",
+        type: "post"
+      };
+      $('#gp_sum').ajaxForm(options);
+  });
+  $(function() {
+      var options = {
+        target: '#gp_ans_1',
+        url: "/gp1",
+        type: "post"
+      };
+      $('#gp1').ajaxForm(options);
+  });
+</script>
   </head>
 
   <body>
     <div class="container">
 
       <h1>Various math functions</h1>
-      <p class="lead">Quadratic equation</p>
-
+      <p class="lead">Quadratic equation: ax^2+bx+c=0</p>
       <form id="solve">
         <div class="form-row align-items-center">
           <div class="col-auto">
@@ -77,19 +124,20 @@ $(function() {
           <div class="col-auto">
             <button type="submit" class="btn btn-primary mb-2">Solve</button>
           </div>
+          <div class="col-auto">
+            <p class="lead">Answer is <span id="roots">not ready</span></p>
+          </div>
         </div>
       </form>
-      <p class="lead">Answer is <span id="roots">not ready</span></p>
-
     </div>
     <div class="container">
-      <p class="lead">Arimatic Progression Sum</p>
+      <p class="lead">Arimatic Progression Term: t_n=a*(n-1)*d</p>
 
-      <form id="ap">
+      <form id="ap1">
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
-              <input type="number" class="form-control" name="a" placeholder="5">
+              <input type="number" class="form-control" name="a" placeholder="5" required>
               <div class="input-group-append">
                 <div class="input-group-text">a</div>
               </div>
@@ -97,7 +145,7 @@ $(function() {
           </div>
           <div class="col-auto">
             <div class="input-group mb-2">
-              <input type="number" class="form-control" name="b" placeholder="5">
+              <input type="number" class="form-control" name="b" placeholder="5" required>
               <div class="input-group-append">
                 <div class="input-group-text">d</div>
               </div>
@@ -105,7 +153,7 @@ $(function() {
           </div>
           <div class="col-auto">
             <div class="input-group mb-2">
-              <input type="number" class="form-control" name="c" placeholder="5">
+              <input type="number" class="form-control" name="c" placeholder="5" required>
               <div class="input-group-append">
                 <div class="input-group-text">n</div>
               </div>
@@ -114,11 +162,232 @@ $(function() {
           <div class="col-auto">
             <button type="submit" class="btn btn-primary mb-2">Solve</button>
           </div>
+          <div class="col-auto">
+            <p class="lead">Answer is <span id="ap_ans_1">not ready</span></p>
+          </div>
         </div>
-      </form>
-      <p class="lead">Answer is <span id="ap_ans">not ready</span></p>      
+      </form> 
+      <form id="ap2">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="a" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">a</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="b" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">d</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="c" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">t</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Solve</button>
+          </div>
+          <div class="col-auto">
+            <p class="lead">Answer is <span id="ap_ans_2">not ready</span></p>
+          </div>
+        </div>
+      </form> 
+      <form id="ap3">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="a" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">a</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="b" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">n</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="c" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">t</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Solve</button>
+          </div>
+          <div class="col-auto">
+            <p class="lead">Answer is <span id="ap_ans_3">not ready</span></p>
+          </div>
+        </div>
+      </form>  
+      <form id="ap4">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="a" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">d</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="b" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">n</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="c" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">t</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Solve</button>
+          </div>
+          <div class="col-auto">
+            <p class="lead">Answer is <span id="ap_ans_4">not ready</span></p>
+          </div>
+        </div>
+      </form>  
 
     </div>    
+    <div class="container">
+      <p class="lead">Arimatic Progression Sum: s_n=n*(2a+(n-1))*d/2</p>
+
+      <form id="ap_sum">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="a" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">a</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="b" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">d</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="c" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">n</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Solve</button>
+          </div>
+          <div class="col-auto">
+            <p class="lead">Answer is <span id="ap_ans">not ready</span></p>
+          </div>
+        </div>
+      </form>
+
+    </div> 
+    <div class="container">
+      <p class="lead">Geometric Progression Term: t_n=a*r*(n-1)</p>
+
+      <form id="gp1">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="a" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">a</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="b" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">n</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="c" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">r</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Solve</button>
+          </div>
+          <div class="col-auto">
+            <p class="lead">Answer is <span id="gp_ans_1">not ready</span></p>
+          </div>
+        </div>
+      </form>
+
+    </div>    
+    <div class="container">
+      <p class="lead">Geometric Progression Sum: s_n=a*(r^n-1)/(r-1)</p>
+
+      <form id="gp_sum">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="a" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">a</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="b" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">n</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" name="c" placeholder="5" required>
+              <div class="input-group-append">
+                <div class="input-group-text">r</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Solve</button>
+          </div>
+          <div class="col-auto">
+            <p class="lead">Answer is <span id="gp_ans">not ready</span></p>
+          </div>
+        </div>
+      </form>
+
+    </div> 
     <div class="container">
       <p class="lead">Fibonacci</p>
 
@@ -126,7 +395,7 @@ $(function() {
         <div class="form-row align-items-center">
           <div class="col-auto">
             <div class="input-group mb-2">
-              <input type="number" class="form-control" name="a" placeholder="5" required>
+              <input type="number" class="form-control" name="a" placeholder="5" required min="1" max="888">
               <div class="input-group-append">
                 <div class="input-group-text">n</div>
               </div>
@@ -135,9 +404,11 @@ $(function() {
           <div class="col-auto">
             <button type="submit" class="btn btn-primary mb-2">Solve</button>
           </div>
+          <div class="col-auto">
+            <p class="lead">Answer is <span id="fib_dp_ans">not ready</span></p> 
+          </div>
         </div>
-      </form>
-      <p class="lead">Answer is <span id="fib_dp_ans">not ready</span></p>      
+      </form>     
 
     </div>
   </body>

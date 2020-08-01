@@ -117,11 +117,15 @@ fn ap4(n: i64,d: i64,t:i64) -> i64 { t-(n-1)*d }
 fn ap1_sum(a:i64,n: i64,d: i64) -> i64 { n*(2*a+n-1)*d/2 }
 
 #[wasm_bindgen]
-pub fn gp(params: &str) -> String {
-  return serde_json::to_string(&params).unwrap();
+pub fn gp1_sum_d(params: &str) -> String {
+  let ps: (i64, u32, i64) = serde_json::from_str(&params).unwrap();
+  return serde_json::to_string(&gp_sum(ps.0,ps.1,ps.2)).unwrap();
+}
+#[wasm_bindgen]
+pub fn gp1_d(params: &str) -> String {
+  let ps: (i64, i64, i64) = serde_json::from_str(&params).unwrap();
+  return serde_json::to_string(&gp1(ps.0,ps.1,ps.2)).unwrap();
 }
 
-#[wasm_bindgen]
-pub fn is_prime(n: i32) -> String {
-  return serde_json::to_string(&n).unwrap();
-}
+fn gp_sum(a:i64,n: u32,r: i64) -> i64 { a*(r.pow(n)-1)/(r-1) }
+fn gp1(a:i64,n: i64,r: i64) -> i64 { a*r*(n-1) }
